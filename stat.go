@@ -128,8 +128,8 @@ func djb2(bytes []byte) string {
 	hash := uint64(5381)
 
 	for _, b := range bytes {
-		hash += uint64(b) + hash + hash<<5
+		hash = uint64(b) + hash + hash<<5
 	}
 
-	return "hopsfs_usr" + fmt.Sprintf("%v", hash)
+	return "hops" + fmt.Sprintf("%v", hash)
 }
